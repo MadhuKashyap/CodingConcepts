@@ -1,4 +1,4 @@
-Q. What is a binary tree?
+## Q. What is a binary tree?
 Binary Tree is a non-linear data structure where each node has at most two children. Each node in a Binary Tree has three parts : data, 
 left node, right node
 
@@ -8,7 +8,7 @@ b. delete
 c. search
 d. traverse (preorder, inorder, postorder)
 
-Q. Discuss the time complexities of above basic operations
+### Q. Discuss the time complexities of above basic operations
 
 Suppose we have a tree with N nodes
                                     CASE 1 : Binary Tree
@@ -22,7 +22,7 @@ Suppose we have a tree with N nodes
    insert : We first find the element traversing left or right then insert the leaf, So TC : O(log2N), worst( skewed tree) : 0(N)
    delete : we first find the element and then delete it, So TC : O(log2N), worst( skewed tree) : 0(N)                              
                                   
-Q. State some properties of binary tree
+### Q. State some properties of binary tree
 
 a. If we create a binary tree using an array with N elements, height of the binary tree will be in range log2(N+1) <= height <= N.
 b. Number of nodes at level L of a binary tree is between [1 , 2^L].
