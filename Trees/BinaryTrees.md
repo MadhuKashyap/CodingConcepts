@@ -13,14 +13,14 @@ left node, right node
 Suppose we have a tree with N nodes
    #### CASE 1 : Binary Tree
    **search** : in a binary tree we will have to check all the elements, <mark>So TC = average : O(N), worst : 0(N)</mark> <br />
-   **insert** : We first find the element whose leaf has to be inserted and then insert the leaf, So TC : average : O(N), worst : 0(N) <br />
-   **delete** : we first find the element and then delete it, So TC : average : O(N), worst : 0(N) <br />
+   **insert** : We first find the element whose leaf has to be inserted and then insert the leaf, <mark>So TC : average : O(N), worst : 0(N) </mark><br />
+   **delete** : we first find the element and then delete it, <mark>So TC : average : O(N), worst : 0(N)</mark> <br />
 
 
    #### CASE 2 : Binary Search Tree
-   **search** : in a BST we will traverse only either left or right, So TC : O(log2N), worst( skewed tree) : 0(N) <br />
-   **insert** : We first find the element traversing left or right then insert the leaf, So TC : O(log2N), worst( skewed tree) : 0(N) <br />
-   **delete** : we first find the element and then delete it, So TC : O(log2N), worst( skewed tree) : 0(N) <br />                       
+   **search** : in a BST we will traverse only either left or right, <mark>So TC : O(log2N), worst( skewed tree) : 0(N) </mark><br />
+   **insert** : We first find the element traversing left or right then insert the leaf, <mark>So TC : O(log2N), worst( skewed tree) : 0(N) </mark><br />
+   **delete** : we first find the element and then delete it, <mark>So TC : O(log2N), worst( skewed tree) : 0(N) </mark><br />                       
                                   
 ### Q. State some properties of binary tree
 
