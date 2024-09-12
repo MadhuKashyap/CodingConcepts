@@ -12,8 +12,7 @@ left node, right node
 
 Suppose we have a tree with N nodes
    #### CASE 1 : Binary Tree
-   <span style="color:blue">some *This is Blue italic.* text</span>
-   **search** : in a binary tree we will have to check all the elements, <span style="color:blue">So TC = average : O(N), worst : 0(N)</span> <br />
+   **search** : in a binary tree we will have to check all the elements, <mark>So TC = average : O(N), worst : 0(N)</mark> <br />
    **insert** : We first find the element whose leaf has to be inserted and then insert the leaf, So TC : average : O(N), worst : 0(N) <br />
    **delete** : we first find the element and then delete it, So TC : average : O(N), worst : 0(N) <br />
 
