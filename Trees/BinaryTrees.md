@@ -28,3 +28,5 @@ Suppose we have a tree with N nodes
 * Number of nodes at level L of a binary tree is between [1 , 2^L].
 * Total number of leaf nodes in a binary tree = (total number of nodes with 2 children) + 1
 
+### Q. Types of Binary Tree
+
