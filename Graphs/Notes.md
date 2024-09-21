@@ -59,8 +59,13 @@ A graph in which vertex can be divided into two sets such that vertex in each se
 * There can be ore than 1 path between edges in graph, only 1 path is possible in tree.
 
 ### Graph Traversal algorithms
-* BFS
-* DFS
+* BFS : It begins with a node, then first traverses all its adjacent. Once all adjacent are visited, then their adjacent are traversed.
+
+Applications : 
+ ** Detect cycle in a directed graph 
+ ** BFS can be used to find a topological ordering of the nodes in a directed acyclic graph
+ ** 
+* DFS : starts from a given source and explores all reachable vertices from the given source. 
 
 
 
