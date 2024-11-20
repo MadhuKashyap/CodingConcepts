@@ -17,23 +17,25 @@ Let's see how a  BITree[] is constructed from an array arr[n] with an example.
 arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9}
 
 1. If arr has size 12 BITree has size 13 as 0th index of BITree is dummy value;
-2. Let's now check parent for each index. This can be calculated with formula index + (index & -index) where -index is 2's compliment of index. This can also be done by flipping the least significant set bit of the number.
-     1 = 000<ins>1</ins> = 0000
-     2 = 00<ins>1</ins>0 = 0000
-     3 = 001<ins>1</ins> = 0010
+2. Let's now check parent for each index. This can be calculated with formula index + (index & -index) where -index is 2's compliment of index. This can also be done by flipping the least significant set bit of the number.<br/>
+     1 = 000<ins>1</ins> = 0000<br/>
+     2 = 00<ins>1</ins>0 = 0000<br/>
+     3 = 001<ins>1</ins> = 0010<br/>
 
 This will result in a tree like this
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/6a6bc985-20ce-4bf4-9934-29d090e4b387">
 
 Let's now get all the values for each index in BITree[]. This can be done by using the fact that each number can be represented as sum of
-power of 2
+power of 2<br/>
 
-1 = 0 + 2<sup>0</sup> (Starting from index 0 take next 2<sup>0</sup> elements i.e. 1 element)
-2 = 0 + 2<sup>1</sup> (Starting from index 0 take next 2 element)
-3 = 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>1</sup> i.e 2 take next 1 element)
-11 = 2<sup>3</sup> + 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>3</sup> + 2<sup>1</sup> i.e 10 take next 1 element)
+1 = 0 + 2<sup>0</sup> (Starting from index 0 take next 2<sup>0</sup> elements i.e. 1 element)<br/>
+2 = 0 + 2<sup>1</sup> (Starting from index 0 take next 2 element)<br/>
+3 = 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>1</sup> i.e 2 take next 1 element)<br/>
+11 = 2<sup>3</sup> + 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>3</sup> + 2<sup>1</sup> i.e 10 take next 1 element)<br/>
 
 <img width="647" alt="image" src="https://github.com/user-attachments/assets/6085a1f8-1d6a-426f-bc64-9092e6633d08">
+
+
 
 
 
