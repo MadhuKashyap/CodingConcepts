@@ -1,6 +1,6 @@
 ### What is BIT?
 
-Binary Indexed Tree or Fenwick Tree is a way to represent an array of numbers as an array of prefix Sum of the numbers
+Binary Indexed Tree or Fenwick Tree is a way to represent an array of numbers as an array of prefix Sum of the numbers. <br>
 Let us consider the following problem to understand Binary Indexed Tree.
 <b> We have an array arr[0 . . . n-1]. We would like to </b>
 1. Compute the sum of the first i elements i.e. [0, i]
