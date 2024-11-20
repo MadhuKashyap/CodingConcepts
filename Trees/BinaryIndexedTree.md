@@ -35,7 +35,7 @@ power of 2<br/>
 
 <img width="647" alt="image" src="https://github.com/user-attachments/assets/6085a1f8-1d6a-426f-bc64-9092e6633d08">
 
-
+Now let's see how both operations work on BITree.
 
 
 
