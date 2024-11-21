@@ -35,7 +35,18 @@ power of 2<br/>
 
 <img width="647" alt="image" src="https://github.com/user-attachments/assets/6085a1f8-1d6a-426f-bc64-9092e6633d08">
 
-Now let's see how both operations work on BITree.
+Now let's see how both operations i.e. getSum(x) and update(x, value) work on BITree.
+
+pseudo code for getSum(x) :
+
+<b>getSum(x) : Returns the sum of the sub-array arr[0,…,x].</b>
+1. Initialize the output sum as 0, the current index as x+1. 
+2. Do following while the current index is greater than 0. 
+     a. Add BITree[index] to sum 
+     b. Go to the parent of BITree[index]. The parent can be obtained by altering the last set bit from the current index, i.e., index = index – (index & (-index)) 
+3. Return sum.
+
+
 
 
 
