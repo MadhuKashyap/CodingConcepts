@@ -33,24 +33,153 @@ power of 2<br/>
 3 = 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>1</sup> i.e 2 take next 1 element)<br/>
 11 = 2<sup>3</sup> + 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>3</sup> + 2<sup>1</sup> i.e 10 take next 1 element)<br/>
 
-<img width="647" alt="image" src="https://github.com/user-attachments/assets/6085a1f8-1d6a-426f-bc64-9092e6633d08">
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/cbf4fa2e-3105-4a90-b2e2-3e88abb64b02">
+
 
 Now let's see how both operations i.e. getSum(x) and update(x, value) work on BITree.
 
-pseudo code for getSum(x) :
+<ins>pseudo code for getSum(x)</ins> :
 
 <b>getSum(x) : Returns the sum of the sub-array arr[0,…,x].</b>
 1. Initialize the output sum as 0, the current index as x+1. 
-2. Do following while the current index is greater than 0. 
-     a. Add BITree[index] to sum 
+2. Do following while the current index is greater than 0. <br/>
+     a. Add BITree[index] to sum <br/>
      b. Go to the parent of BITree[index]. The parent can be obtained by altering the last set bit from the current index, i.e., index = index – (index & (-index)) 
 3. Return sum.
 
+In array arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9} we want to perform getSum(6) i.e. get the sum of [0, 6] :
+
+1. Start from index x + 1 i.e. 7. It has value 4 and covers range (6, 6).
+2. Go to parent of 7 i.e. 6. It has a value 5 and covers range (4, 5).
+3. Go to parent of 6 i.e. 4. It has value 7 and covers range (0, 3).
+4. Thus we covered the entire range (0, 6).
 
 
+<ins> pseudo code for update(x, value) </ins> : 
+<b> update(x, val): Updates the Binary Indexed Tree (BIT) by performing arr[index] += val </b>
 
+1. Initialize the current index as x+1. 
+2. Do the following while the current index is smaller than or equal to n. <br/>
+     a. Add the val to BITree[index] <br/>
+     b. Go to next element of BITree[index]. The next element can be obtained by incrementing the last set bit of the current index, i.e., index = index + (index & (-index))
 
+In array arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9} we want to perform update(6, 3) :
 
+1. current index = 7, add 3 at index 7 in BITree[]. This covers range (6,6)
+2. Next element of 7 is 7 + (7 & -7) i.e. 8. So add 3 at index 3. This covers range (0,7).
+3. Next of 8 is 8 + (8 & -8) i.e. 16 which is out of range so we stop here.
+
+Below is the coding implementation of BITree
+
+```
+// Java program to demonstrate lazy 
+// propagation in segment tree 
+import java.util.*; 
+import java.lang.*; 
+import java.io.*; 
+
+class BinaryIndexedTree 
+{ 
+	// Max tree size 
+	final static int MAX = 1000;	 
+
+	static int BITree[] = new int[MAX]; 
+	
+	/* n --> No. of elements present in input array. 
+	BITree[0..n] --> Array that represents Binary 
+					Indexed Tree. 
+	arr[0..n-1] --> Input array for which prefix sum 
+					is evaluated. */
+
+	// Returns sum of arr[0..index]. This function 
+	// assumes that the array is preprocessed and 
+	// partial sums of array elements are stored 
+	// in BITree[]. 
+	int getSum(int index) 
+	{ 
+		int sum = 0; // Initialize result 
+	
+		// index in BITree[] is 1 more than 
+		// the index in arr[] 
+		index = index + 1; 
+	
+		// Traverse ancestors of BITree[index] 
+		while(index>0) 
+		{ 
+			// Add current element of BITree 
+			// to sum 
+			sum += BITree[index]; 
+	
+			// Move index to parent node in 
+			// getSum View 
+			index -= index & (-index); 
+		} 
+		return sum; 
+	} 
+
+	// Updates a node in Binary Index Tree (BITree) 
+	// at given index in BITree. The given value 
+	// 'val' is added to BITree[i] and all of 
+	// its ancestors in tree. 
+	public static void updateBIT(int n, int index, 
+										int val) 
+	{ 
+		// index in BITree[] is 1 more than 
+		// the index in arr[] 
+		index = index + 1; 
+	
+		// Traverse all ancestors and add 'val' 
+		while(index <= n) 
+		{ 
+		// Add 'val' to current node of BIT Tree 
+		BITree[index] += val; 
+	
+		// Update index to that of parent 
+		// in update View 
+		index += index & (-index); 
+		} 
+	} 
+
+	/* Function to construct fenwick tree 
+	from given array.*/
+	void constructBITree(int arr[], int n) 
+	{ 
+		// Initialize BITree[] as 0 
+		for(int i=1; i<=n; i++) 
+			BITree[i] = 0; 
+	
+		// Store the actual values in BITree[] 
+		// using update() 
+		for(int i = 0; i < n; i++) 
+			updateBIT(n, i, arr[i]); 
+	} 
+
+	// Main function 
+	public static void main(String args[]) 
+	{ 
+		int freq[] = {2, 1, 1, 3, 2, 3, 
+					4, 5, 6, 7, 8, 9}; 
+		int n = freq.length; 
+		BinaryIndexedTree tree = new BinaryIndexedTree(); 
+
+		// Build fenwick tree from given array 
+		tree.constructBITree(freq, n); 
+
+		System.out.println("Sum of elements in arr[0..5]"+ 
+						" is "+ tree.getSum(5)); 
+		
+		// Let use test the update operation 
+		freq[3] += 6; 
+		
+		// Update BIT for above change in arr[] 
+		updateBIT(n, 3, 6); 
+
+		// Find sum after the value is updated 
+		System.out.println("Sum of elements in arr[0..5]"+ 
+					" after update is " + tree.getSum(5)); 
+	} 
+} 
+```
 
 
 
