@@ -4,7 +4,7 @@ Binary Indexed Tree or Fenwick Tree is a way to represent an array of numbers as
 Let us consider the following problem to understand Binary Indexed Tree.
 <b> We have an array arr[0 . . . n-1]. We would like to </b>
 1. Compute the sum of the first i elements i.e. [0, i]
-2. Modify the value of a specified element of the array arr[i] = x where 0 <= i <= n-1.
+2. Modify the value of a specified element of the array arr[i] += x where 0 <= i <= n-1.
 
 A simple solution is to run a loop from 0 to i-1 and calculate the sum of the elements. To update a value, simply do arr[i] = x. 
 The first operation takes <mark>O(n)</mark> time and the second operation takes <mark>O(1)</mark> time. 
