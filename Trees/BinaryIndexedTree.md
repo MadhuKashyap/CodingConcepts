@@ -56,7 +56,7 @@ In array arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9} we want to perform getSum(
 4. Thus we covered the entire range (0, 6).
 
 
-<ins> pseudo code for update(x, value) </ins> : 
+<ins> pseudo code for update(x, value) </ins> : <br/>
 <b> update(x, val): Updates the Binary Indexed Tree (BIT) by performing arr[index] += val </b>
 
 1. Initialize the current index as x+1. 
