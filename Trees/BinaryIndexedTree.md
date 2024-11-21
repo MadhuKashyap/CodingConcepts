@@ -72,8 +72,6 @@ In array arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9} we want to perform update(
 Below is the coding implementation of BITree
 
 ```
-// Java program to demonstrate lazy 
-// propagation in segment tree 
 import java.util.*; 
 import java.lang.*; 
 import java.io.*; 
@@ -91,27 +89,21 @@ class BinaryIndexedTree
 	arr[0..n-1] --> Input array for which prefix sum 
 					is evaluated. */
 
-	// Returns sum of arr[0..index]. This function 
-	// assumes that the array is preprocessed and 
-	// partial sums of array elements are stored 
-	// in BITree[]. 
+	// Returns sum of arr[0..index].
 	int getSum(int index) 
 	{ 
-		int sum = 0; // Initialize result 
+		int sum = 0;
 	
-		// index in BITree[] is 1 more than 
-		// the index in arr[] 
+		// index in BITree[] is 1 more than the index in arr[] 
 		index = index + 1; 
 	
 		// Traverse ancestors of BITree[index] 
 		while(index>0) 
 		{ 
-			// Add current element of BITree 
-			// to sum 
+			// Add current element of BITree to sum 
 			sum += BITree[index]; 
 	
-			// Move index to parent node in 
-			// getSum View 
+			// Move index to parent node 
 			index -= index & (-index); 
 		} 
 		return sum; 
@@ -121,8 +113,7 @@ class BinaryIndexedTree
 	// at given index in BITree. The given value 
 	// 'val' is added to BITree[i] and all of 
 	// its ancestors in tree. 
-	public static void updateBIT(int n, int index, 
-										int val) 
+	public static void updateBIT(int n, int index, int val) 
 	{ 
 		// index in BITree[] is 1 more than 
 		// the index in arr[] 
@@ -140,21 +131,16 @@ class BinaryIndexedTree
 		} 
 	} 
 
-	/* Function to construct fenwick tree 
-	from given array.*/
 	void constructBITree(int arr[], int n) 
 	{ 
-		// Initialize BITree[] as 0 
 		for(int i=1; i<=n; i++) 
 			BITree[i] = 0; 
 	
-		// Store the actual values in BITree[] 
-		// using update() 
+		// Store the actual values in BITree[] using update() 
 		for(int i = 0; i < n; i++) 
 			updateBIT(n, i, arr[i]); 
 	} 
 
-	// Main function 
 	public static void main(String args[]) 
 	{ 
 		int freq[] = {2, 1, 1, 3, 2, 3, 
@@ -162,21 +148,16 @@ class BinaryIndexedTree
 		int n = freq.length; 
 		BinaryIndexedTree tree = new BinaryIndexedTree(); 
 
-		// Build fenwick tree from given array 
 		tree.constructBITree(freq, n); 
 
-		System.out.println("Sum of elements in arr[0..5]"+ 
-						" is "+ tree.getSum(5)); 
-		
-		// Let use test the update operation 
+		System.out.println("Sum of elements in arr[0..5]"+ " is "+ tree.getSum(5)); 
 		freq[3] += 6; 
 		
 		// Update BIT for above change in arr[] 
 		updateBIT(n, 3, 6); 
 
 		// Find sum after the value is updated 
-		System.out.println("Sum of elements in arr[0..5]"+ 
-					" after update is " + tree.getSum(5)); 
+		System.out.println("Sum of elements in arr[0..5]"+ " after update is " + tree.getSum(5)); 
 	} 
 } 
 ```
