@@ -23,7 +23,8 @@ arr[] = {2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9}
      3 = 001<ins>1</ins> = 0010<br/>
 
 This will result in a tree like this
-<img width="652" alt="image" src="https://github.com/user-attachments/assets/6a6bc985-20ce-4bf4-9934-29d090e4b387">
+<img width="755" alt="image" src="https://github.com/user-attachments/assets/b055de4d-c8a5-49fa-973b-b1fbf8da98f6">
+
 
 Let's now get all the values for each index in BITree[]. This can be done by using the fact that each number can be represented as sum of
 power of 2<br/>
