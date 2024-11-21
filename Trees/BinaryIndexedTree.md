@@ -6,11 +6,11 @@ Let us consider the following problem to understand Binary Indexed Tree.
 1. Compute the sum of the first i elements i.e. [0, i]
 2. Modify the value of a specified element of the array arr[i] += x where 0 <= i <= n-1.
 
-A simple solution is to run a loop from 0 to i-1 and calculate the sum of the elements. To update a value, simply do arr[i] = x. 
-The first operation takes <mark>O(n)</mark> time and the second operation takes <mark>O(1)</mark> time. 
+A simple solution is to run a loop from 0 to i-1 and calculate the sum of the elements. To update a value, simply do arr[i] = x. <br/>
+The first operation takes <mark>O(n)</mark> time <br> The second operation takes <mark>O(1)</mark> time. 
 
-Another simple solution is to create an extra array and store the sum of the first i-th elements at the i-th index in this new array. 
-The sum of a given range can now be calculated in <mark>O(1)</mark> time, but the update operation takes <mark>O(n)</mark> time now.
+Another simple solution is to create an extra array and store the sum of the first i-th elements at the i-th index in this new array. <br/>
+The sum of a given range can now be calculated in <mark>O(1)</mark> time, <br/> but the update operation takes <mark>O(n)</mark> time now.
 
 The most efficient solution is to use a BIT which performs both operation in <mark>O(log n)</mark> time. Binary Indexed Tree is represented as an array. 
 Let's see how a  BITree[] is constructed from an array arr[n] with an example.
