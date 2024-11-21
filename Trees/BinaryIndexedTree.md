@@ -29,8 +29,8 @@ This will result in a tree like this
 Let's now get all the values for each index in BITree[]. This can be done by using the fact that each number can be represented as sum of
 power of 2<br/>
 
-1 = 0 + 2<sup>0</sup> (Starting from index 0 take next 2<sup>0</sup> elements i.e. 1 element)<br/>
-2 = 0 + 2<sup>1</sup> (Starting from index 0 take next 2 element)<br/>
+1 = 0 + 2<sup>0</sup> (Starting from index 0 in arr take sum of next 2<sup>0</sup> elements i.e. 1 element)<br/>
+2 = 0 + 2<sup>1</sup> (Starting from index 0 in arr take sum of next 2 element)<br/>
 3 = 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>1</sup> i.e 2 take next 1 element)<br/>
 11 = 2<sup>3</sup> + 2<sup>1</sup> + 2<sup>0</sup> (Starting from index 2<sup>3</sup> + 2<sup>1</sup> i.e 10 take next 1 element)<br/>
 
