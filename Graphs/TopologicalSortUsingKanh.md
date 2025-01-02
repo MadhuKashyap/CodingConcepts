@@ -1,4 +1,7 @@
 ```
+/**
+ * Kanh's algorithm not only prints Topological sort for a DAG but also detects if a graph contains cycle or not
+ */
 public class TopologicalSortKanh {
     public static void main(String[] args) {
         Graph g = new Graph(4);
@@ -34,5 +37,4 @@ public class TopologicalSortKanh {
         return result;
     }
 }
-
-``` 
+```
