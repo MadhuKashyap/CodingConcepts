@@ -8,7 +8,7 @@
 
  We have an array parent[] which tells what element belongs to what subset
 initially parent[] = {0,1,2} i.e. each element is a separate subset
-Now process all edges one by one.
+Now process all edges one by one. <br/>
 Edge 0-1: 
         => Find the subsets in which vertices 0 and 1 are. 
         => 0 and 1 belongs to subset 0 and 1.
