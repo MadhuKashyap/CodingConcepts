@@ -1,6 +1,8 @@
  
 Single source shortest path algorithm
 
+1. Initially distances assigned to vertices are {0, INF, INF, INF, INF, INF, INF, INF} where  INF  indicates infinite. 
+2. Now pick the vertex with a minimum distance value. The vertex 0 is picked. After picking 0, update distance values of its adjacent vertices. 
 ```
 import java.io.*;
 import java.util.*;
@@ -20,39 +22,26 @@ class GFG {
 
 	// Function to find the shortest distance of all the
 	// vertices from the source vertex S.
-	public static int[] dijkstra(
-		int V, ArrayList<ArrayList<AdjListNode> > graph,
-		int src)
+	public static int[] dijkstra(int V, ArrayList<ArrayList<AdjListNode> > graph, int src)
 	{
 		int[] distance = new int[V];
 		for (int i = 0; i < V; i++)
 			distance[i] = Integer.MAX_VALUE;
 		distance[src] = 0;
 
-		PriorityQueue<AdjListNode> pq = new PriorityQueue<>(
-			(v1, v2) -> v1.getWeight() - v2.getWeight());
+		PriorityQueue<AdjListNode> pq = new PriorityQueue<>((v1, v2) -> v1.getWeight() - v2.getWeight());
 		pq.add(new AdjListNode(src, 0));
 
 		while (pq.size() > 0) {
 			AdjListNode current = pq.poll();
 
-			for (AdjListNode n :
-				graph.get(current.getVertex())) {
-				if (distance[current.getVertex()]
-						+ n.getWeight()
-					< distance[n.getVertex()]) {
-					distance[n.getVertex()]
-						= n.getWeight()
-						+ distance[current.getVertex()];
-					pq.add(new AdjListNode(
-						n.getVertex(),
-						distance[n.getVertex()]));
+			for (AdjListNode n : graph.get(current.getVertex())) {
+				if (distance[current.getVertex()] + n.getWeight() < distance[n.getVertex()]) {
+					distance[n.getVertex()] = n.getWeight() + distance[current.getVertex()];
+					pq.add(new AdjListNode(n.getVertex(),distance[n.getVertex()]));
 				}
 			}
 		}
-		// If you want to calculate distance from source to
-		// a particular target, you can return
-		// distance[target]
 		return distance;
 	}
 
