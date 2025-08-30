@@ -1,8 +1,8 @@
 ### Parenthesis problem:-
 
-1.https://leetcode.com/problems/generate-parentheses
-2.https://leetcode.com/problems/score-of-parentheses
-3.https://leetcode.com/problems/valid-parentheses
+1. https://leetcode.com/problems/generate-parentheses
+2. https://leetcode.com/problems/score-of-parentheses
+3. https://leetcode.com/problems/valid-parentheses
 4.https://leetcode.com/problems/valid-parentheses Easy
 5.https://leetcode.com/problems/remove-outermost-parentheses Easy
 6.https://leetcode.com/problems/different-ways-to-add-parentheses/ Medium
