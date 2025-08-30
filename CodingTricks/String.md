@@ -2,8 +2,7 @@
 
 1. https://leetcode.com/problems/generate-parentheses  ✅
 2. https://leetcode.com/problems/score-of-parentheses
-3. https://leetcode.com/problems/valid-parentheses
-4. https://leetcode.com/problems/valid-parentheses Easy
+3. https://leetcode.com/problems/valid-parentheses ✅
 5. https://leetcode.com/problems/remove-outermost-parentheses Easy
 6. https://leetcode.com/problems/different-ways-to-add-parentheses/ Medium
 7. https://leetcode.com/problems/remove-invalid-parentheses Hard
