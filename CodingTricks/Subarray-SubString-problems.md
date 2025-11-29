@@ -160,3 +160,6 @@ Requires prefix sums + hashmap, but the two-pointer variant works for positive i
 
 Subarrays with K Different Integers (LeetCode 992)
 Count subarrays that have exactly K distinct integers.
+
+Max Consecutive Ones II,
+You are given a binary array nums containing only 0s and 1s. You are allowed to flip at most one 0 to 1. Return the maximum number of consecutive 1s
